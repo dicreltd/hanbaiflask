@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form method="post" action="add">
+    商品名：<input type="text" name="sname"><br>
+    単価　：<input type="text" name="tanka"><br>
+    <input type="submit" value="追加">
+</form>
+
+<table>
+    <tr><th>商品ID</th><th>商品名</th><th>単価</th></tr>
+    {% for s in shouhins%}
+    <tr>
+        <td>{{s.sid}}</td>
+        <td>{{s.sname}}</td>
+        <td>{{s.tanka}}</td>
+        <td><a href="update?sid={{s.sid}}" class="btn">変更</a></td>
+        <td><a href="del?sid={{s.sid}}" class="btn">削除</a></td>
+        <td><a href="uriage?sid={{s.sid}}" class="btn">売上</a></td>
+    </tr>
+    {% endfor %}
+</table>
+    
+{% endblock %}

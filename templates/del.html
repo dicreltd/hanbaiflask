@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<p>以下の商品を削除します</p>
+
+<p>商品ID：{{shouhin.sid}}</p>
+<p>商品名：{{shouhin.sname}}</p>
+<p>単価　：{{shouhin.tanka}}</p>
+
+<form method="post" action="/del">
+    <input type="hidden" name="sid" value="{{shouhin.sid}}">
+    <input type="submit" value="削除">
+</form>
+
+{% endblock %}

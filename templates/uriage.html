@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<table>
+    <tr><th>商品ID</th><th>日付</th><th>個数</th></tr>
+    {% for u in uriages%}
+    <tr>
+        <td>{{u.sid}}</td>
+        <td>{{u.hi}}</td>
+        <td>{{u.kosu}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>追加</h2>
+<form method="post" action="uadd">
+    <input type="hidden" name="sid" value={{shouhin.sid}}>
+    個数：<input type="text" name="kosu"><br>
+    <input type="submit" value="追加">
+</form>
+
+<p><a href="/" class="btn">戻る</a></p>
+
+{% endblock %}

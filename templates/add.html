@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<p>以下の商品を追加します</p>
+
+<p>商品名：{{shouhin.sname}}</p>
+<p>単価　：{{shouhin.tanka}}</p>
+
+<form method="post" action="/">
+    <input type="hidden" name="sname" value="{{shouhin.sname}}">
+    <input type="hidden" name="tanka" value="{{shouhin.tanka}}">
+    <input type="submit" value="追加">
+</form>
+
+{% endblock %}
